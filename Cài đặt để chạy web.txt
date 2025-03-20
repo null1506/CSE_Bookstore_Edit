@@ -1,0 +1,13 @@
+Để thực hiện được thì ta cần tải xampp, netbeans, my SQL server, nếu muốn chạy thêm script python thì dùng VS code. Dưới đây là sau khi các bạn đã tải hoàn tất mấy ứng dụng trên
+Tải phần nhóm dữ liệu nhóm mình đã đẩy lên lưu vào một folder, ví dụ lưu vào folder1
+-	Xampp: Trong XAMPP Control Panel, sẽ thấy các dịch vụ như Apache, MySQL… Nhấn nút "Start" bên cạnh Apache (vì dùng SQL server nên k cần bật thêm cái gì) để khởi động chúng. Nếu thành công, sẽ thấy trạng thái chuyển sang "Running". Mở trình duyệt web và nhập vào địa chỉ "http://localhost" hoặc "http://127.0.0.1". Nếu thấy trang dashboard của XAMPP, nghĩa là đã cài đặt thành công.
+-	Netbeans: bạn tạo một project ví dụ project1 vào đường dẫn C:/xampp/htdocs/project1 sau đó bạn quay ra File Explorer và bạn mở phần folder1 ra sao chép tất cả rồi dán vào đây đường dẫn kia. Nhớ replay file index. Sau đó quay lại netbeans bấm vào functions/ sau đó ấn vào tiếp file database_functions để sửa tên $serverName thành tên mà bạn kết nối với SQL server sau khi bạn đã vào SQL server
+-	SQL server: mở SQL server kết nối luôn với máy của mình. Sau đó vào phần open file và mở file www_project ở trong đường đẫn trên và mở database/ www_project và tạo các bảng và insert dữ liệu. 
+-	Tiếp theo là cài SQLSRV Driver và ODBC Driver cho PHP trên xampp
+Bước 1: Cài đặt SQLSRV Driver: Truy cập trang chính thức của Microsoft để tải SQLSRV Driver: https://learn.microsoft.com/en-us/sql/connect/php/download-drivers-php-sql-server?view=sql-server-ver16 Chọn phiên bản phù hợp với hệ điều hành của bạn (Windows + Thread Safe). Giải nén và sao chép 2 file DLL quan trọng:  php_sqlsrv_xx_ts.dll; php_pdo_sqlsrv_xx_ts.dll
+Sao chép vào thư mục: C:\xampp\php\ext\. Mở file cấu hình PHP php.ini (tại đường dẫn C:\xampp\php\php.ini) bằng Notepad hoặc bất kỳ trình soạn thảo nào, sau đó thêm 2 dòng sau vào cuối file: 
+extension=php_sqlsrv_82_ts.dll
+extension=php_pdo_sqlsrv_82_ts.dll
+Lưu file php.ini và đóng lại.
+Bước 2: Cài đặt ODBC Driver cho SQL Server:  Chạy file cài đặt và làm theo hướng dẫn để hoàn tất quá trình cài đặt. Sau khi cài đặt xong, khởi động lại XAMPP để các thay đổi có hiệu lực.
+Bước 3: Vào lại netbeans để mở file book.php hoặc search.php hoặc search_1.php để run file từ đó sẽ truy cập được vào trang web 
